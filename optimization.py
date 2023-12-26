@@ -1,5 +1,6 @@
 import pulp
 
+
 def main():
     prob = pulp.LpProblem("Maximize_Profit", pulp.LpMaximize)
 
@@ -25,7 +26,9 @@ def main():
     print(f"Lemonade: {pulp.value(x1):.0f}")
     print(f"Fruit Juice: {pulp.value(x2):.0f}")
     print(f"Total Profit: {pulp.value(prob.objective):.0f}")
-    print(f"Unused resources: water {abs(pulp.value(water_limit)):.0f}; sugar {abs(pulp.value(sugar_limit)):.0f}; lemon juice {abs(pulp.value(lemon_juice_limit)):.0f}; fruit puree {abs(pulp.value(fruit_puree_limit)):.0f}")
+    print(
+        f"Unused resources: water {abs(pulp.value(water_limit)):.0f}; sugar {abs(pulp.value(sugar_limit)):.0f}; lemon "
+        f"juice {abs(pulp.value(lemon_juice_limit)):.0f}; fruit puree {abs(pulp.value(fruit_puree_limit)):.0f}")
 
 
 if __name__ == "__main__":
